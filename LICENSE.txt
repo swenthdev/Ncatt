@@ -1,0 +1,46 @@
+Licencia de Uso y Mejora
+
+Nombre del Proyecto: Ncatt
+
+Versión de la Licencia: 1.0
+Fecha de emisión: 7 de septiembre de 2024
+Vigencia: Indefinida
+
+1. Permisos
+
+Bajo esta licencia, se concede permiso a cualquier persona para utilizar, modificar y mejorar este software bajo las siguientes condiciones:
+
+1.1. Uso Personal y No Comercial
+
+Se permite el uso del software únicamente para fines personales o educativos. El uso comercial o lucrativo está estrictamente prohibido.
+
+1.2. Modificaciones y Contribuciones
+
+Se permite la modificación del software y la integración de mejoras. Cualquier mejora o modificación significativa debe ser compartida con la comunidad y enviada de vuelta al repositorio principal a través de un pull request o método similar.
+
+1.3. Distribución de Modificaciones
+
+Se permite la distribución de versiones modificadas siempre y cuando estas versiones no se utilicen con fines comerciales y mantengan esta licencia.
+
+2. Restricciones
+
+2.1. Prohibición de Comercialización
+
+Está prohibida la venta, distribución con fines comerciales, o cualquier tipo de explotación económica del software.
+
+2.2. Prohibición de Sublicencias
+
+No se permite sublicenciar este software ni modificar los términos de esta licencia.
+
+3. Violaciones y Denuncia
+
+3.1. Acciones Legales por Violación
+
+El uso indebido o comercialización de este software en violación de esta licencia dará lugar a acciones legales. Los desarrolladores originales se reservan el derecho de denunciar cualquier infracción y buscar compensación por daños.
+
+4. Exoneración de Responsabilidad
+
+4.1. Sin Garantía
+
+El software se proporciona "tal cual", sin garantía de ningún tipo, expresa o implícita, incluyendo, pero no limitado a, las garantías de comerciabilidad, adecuación para un propósito particular y no infracción. En ningún caso los autores o titulares del copyright serán responsables de ninguna reclamación, daño o responsabilidad, ya sea en una acción contractual, civil o de otro tipo, que surja del uso del software.
+
