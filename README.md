@@ -59,8 +59,7 @@ Ensure you have the following tools installed on your system:
 1. Clone this repository to your Neovim configuration directory:
 
    ```sh
-   git clone https://github.com/SwintDev/Config-Neovim.git ~/.config/nvim
-   rm -rf ~/.config/nvim/img ~/.config/nvim/README.md
+   git clone https://github.com/swenthdev/Ncatt.git ~/.config/nvim
    ```
 ---
 ### License 
@@ -126,8 +125,7 @@ Asegúrate de tener las siguientes herramientas instaladas:
 1. Clona este repositorio en tu directorio de configuración de Neovim:
 
    ```sh
-   git clone https://github.com/SwintDev/Config-Neovim.git ~/.config/nvim
-   rm -rf ~/.config/nvim/img ~/.config/nvim/README.md
+   git clone https://github.com/swenthdev/Ncatt.git ~/.config/nvim
    ```
 ---
 ### Licencia
