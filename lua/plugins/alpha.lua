@@ -30,7 +30,7 @@ return {
       [[           ░                                       ]],
       [[                                                   ]],
       [[                                                   ]],
-      [[                        Ncatt                      ]],
+      [[                      swenthdev                    ]],
     }
 
     dashboard.section.buttons.val = {

@@ -26,3 +26,5 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	end,
 })
 
+vim.tbl_islist = vim.islist
+
