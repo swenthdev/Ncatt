@@ -76,8 +76,6 @@ This project is licensed under the **Ncatt Personal Use License v1.0**.
 
 ---
 
-## Español
-
 # 🧠 Proyecto Ncatt
 
 > Configuración de Neovim en Lua usando `lazy.nvim`.
@@ -85,6 +83,8 @@ This project is licensed under the **Ncatt Personal Use License v1.0**.
 [**Versión en Inglés**](#english) | [**Español**](#Español)
 
 ---
+
+## Español
 
 ## 📘 Introducción
 
