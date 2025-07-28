@@ -64,6 +64,17 @@ rm -rf ~/.config/nvim/imgs ~/.config/nvim/README.md
 
 ```
 
+## 📝 License
+
+This project is licensed under the **Ncatt Personal Use License v1.0**.
+
+- Free for personal and educational use.
+- Commercial use and sublicensing are prohibited.
+- See `LICENSE.txt` for full terms.
+
+⚠️ Note: Some files configure third-party plugins that are licensed separately (e.g., MIT, Apache 2.0). This license applies only to this configuration and documentation.
+
+
 
 # 🧠 Proyecto Ncatt
 
@@ -140,3 +151,14 @@ git clone https://github.com/swenthdev/Ncatt.git ~/.config/nvim
 rm -rf ~/.config/nvim/imgs ~/.config/nvim/README.md
 
 ```
+
+## 📝 Licencia
+
+Este proyecto está licenciado bajo la **Licencia de Uso Personal Ncatt v1.0**.
+
+- Uso gratuito para fines personales y educativos.
+- El uso comercial y la sublicencia están prohibidos.
+- Consulta el archivo `LICENSE.txt` para ver los términos completos.
+
+⚠️ Nota: Algunos archivos configuran plugins de terceros que están bajo sus propias licencias (por ejemplo, MIT, Apache 2.0). Esta licencia se aplica únicamente a esta configuración y documentación.
+
