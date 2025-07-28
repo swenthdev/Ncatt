@@ -66,9 +66,9 @@ Make sure the following are installed:
 
 ```bash
 git clone https://github.com/swenhtdev/Ncatt.git ~/.config/nvim
-rm -rf ~/.config/nvim/img ~/.config/nvim/README.md
+rm -rf ~/.config/nvim/imgs ~/.config/nvim/README.md
 
-
+```
 
 
 <div align="center">
@@ -149,5 +149,6 @@ Clona este repositorio directamente en tu configuración de Neovim:
 
 ```bash
 git clone https://github.com/swenhtdev/Ncatt.git ~/.config/nvim
-rm -rf ~/.config/nvim/img ~/.config/nvim/README.md
+rm -rf ~/.config/nvim/imgs ~/.config/nvim/README.md
 
+```
