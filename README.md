@@ -1,9 +1,3 @@
-<div align="center">
-
-  <img src="/img/Ncatt.svg" alt="Ncatt Logo" style="border-radius: 50%; height: 300px; width: 300px;"/>
-
-</div>
-
 # 🧠 Project Ncatt
 
 > Neovim configuration in Lua using `lazy.nvim`.
@@ -65,17 +59,11 @@ Make sure the following are installed:
 ### 🚀 Installation
 
 ```bash
-git clone https://github.com/swenhtdev/Ncatt.git ~/.config/nvim
+git clone https://github.com/swenthdev/Ncatt.git ~/.config/nvim
 rm -rf ~/.config/nvim/imgs ~/.config/nvim/README.md
 
 ```
 
-
-<div align="center">
-
-  <img src="/img/Ncatt.svg" alt="Logo de Ncatt" style="border-radius: 50%; height: 300px; width: 300px;"/>
-
-</div>
 
 # 🧠 Proyecto Ncatt
 
@@ -148,7 +136,7 @@ Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
 Clona este repositorio directamente en tu configuración de Neovim:
 
 ```bash
-git clone https://github.com/swenhtdev/Ncatt.git ~/.config/nvim
+git clone https://github.com/swenthdev/Ncatt.git ~/.config/nvim
 rm -rf ~/.config/nvim/imgs ~/.config/nvim/README.md
 
 ```
