@@ -1,0 +1,92 @@
+
+Licencia de Uso y Mejora – Versión 1.1
+
+Nombre del Proyecto: Ncatt
+Versión de la Licencia: 1.1
+Fecha de Emisión: 27 de Julio de 2025
+Vigencia: Indefinida
+
+0. Definiciones
+
+- Uso Personal: Uso del software por parte de individuos con fines estrictamente privados, sin relación con actividades comerciales, profesionales, institucionales ni académicas con financiación externa.
+- Modificación Significativa: Cambios que alteran el funcionamiento, estructura, interfaz o comportamiento del software de forma sustancial.
+- Distribución: Acción de compartir, publicar o reenviar copias del software (original o modificado) a terceros.
+- Comercialización: Cualquier forma de obtención de beneficios económicos directos o indirectos mediante el uso, distribución o integración del software, incluyendo su uso en proyectos comerciales, cobro por servicios relacionados, publicidad, venta o sublicencia.
+
+1. Permisos
+
+Bajo esta licencia, se concede permiso a cualquier persona para utilizar, modificar y mejorar este software exclusivamente para uso personal y bajo las siguientes condiciones:
+
+1.1. Uso Personal
+Se permite el uso del software únicamente con fines personales y privados. El uso con fines comerciales, profesionales o institucionales está prohibido.
+
+1.2. Modificaciones y Contribuciones
+Se permite la modificación del software.
+Las mejoras significativas deben ser compartidas con la comunidad mediante pull request al repositorio principal o a través de un medio acordado.
+Estas mejoras estarán sujetas a revisión por parte de los desarrolladores mantenedores.
+
+1.3. Distribución de Versiones Modificadas
+Se permite la distribución de versiones modificadas siempre que:
+- Se mantenga esta misma licencia en su totalidad.
+- No se usen con fines comerciales o institucionales.
+- Se indique claramente que se trata de una versión modificada y se cite al autor original.
+
+2. Restricciones
+
+2.1. Prohibición de Comercialización
+Está estrictamente prohibido vender, sublicenciar, alquilar o explotar comercialmente este software, incluyendo cualquier versión modificada o derivada.
+
+2.2. Prohibición de Sublicencias
+No se permite emitir sublicencias ni alterar los términos de esta licencia bajo ninguna circunstancia.
+
+3. Violaciones y Denuncias
+
+3.1. Acciones por Uso Indebido
+El uso indebido, la redistribución comercial o la violación de cualquiera de los términos de esta licencia podrá dar lugar a acciones legales.
+Los desarrolladores originales se reservan el derecho de tomar medidas y solicitar compensación por los daños ocasionados.
+
+4. Exoneración de Responsabilidad
+
+4.1. Sin Garantía
+Este software se proporciona "tal cual", sin garantías expresas o implícitas, incluyendo, pero no limitado a, garantías de comerciabilidad, adecuación para un propósito específico y no infracción.
+En ningún caso los autores serán responsables de daños directos o indirectos derivados del uso del software.
+
+5. Actualizaciones de la Licencia
+
+Los autores se reservan el derecho de modificar esta licencia en futuras versiones.
+El uso continuado del software tras la publicación de una nueva versión implicará la aceptación de los nuevos términos.
+
+
+Usage and Improvement License
+
+Project Name: Ncatt
+License Version: 1.0
+Date of Issue: July 27, 2025
+Validity: Indefinite
+1. Permissions
+
+Under this license, any person is granted permission to use, modify, and improve this software under the following conditions:
+1.1. Personal and Non-Commercial Use
+
+Use of the software is permitted only for personal or educational purposes. Commercial or profit-driven use is strictly prohibited.
+1.2. Modifications and Contributions
+
+Modifying the software and integrating improvements is allowed. Any significant improvement or modification must be shared with the community and submitted back to the main repository via pull request or a similar method.
+1.3. Distribution of Modifications
+
+Distribution of modified versions is permitted as long as such versions are not used for commercial purposes and retain this license.
+2. Restrictions
+2.1. Prohibition of Commercialization
+
+The sale, distribution for commercial purposes, or any type of economic exploitation of the software is prohibited.
+2.2. Prohibition of Sublicensing
+
+It is not allowed to sublicense this software or to alter the terms of this license.
+3. Violations and Reporting
+3.1. Legal Action for Violations
+
+Unauthorized use or commercialization of this software in violation of this license will result in legal action. The original developers reserve the right to report any infringement and seek compensation for damages.
+4. Disclaimer of Liability
+4.1. No Warranty
+
+The software is provided "as is", without any warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from the use of the software.
