@@ -1,404 +1,153 @@
-div align="center">
+<div align="center">
 
-
-
-   <img src="/img/Ncatt.svg" alt="Ncatt Logo" style="border-radius: 50%; height: 450px; width: 450px;"/>
-
+  <img src="/img/Ncatt.svg" alt="Ncatt Logo" style="border-radius: 50%; height: 300px; width: 300px;"/>
 
 </div>
 
+# 🧠 Project Ncatt
 
+> Neovim configuration in Lua using `lazy.nvim`.
 
-
-
-# Project Ncatt
-
-
-
-
-
-# Neovim Configuration
-
-
-
-
-
-[**English Version**](#english) | [**Versión en Español**](#español)
-
-
-
-
+[**English**](#english) | [**Español**](#espa%C3%B1ol)
 
 ---
-
-
-
-
 
 ## English
 
+### 📘 Introduction
 
+Welcome to **Ncatt**, a Neovim configuration crafted with performance and customization in mind. Built using **Lua** and the powerful plugin manager **[lazy.nvim](https://github.com/folke/lazy.nvim)**, this setup aims to be modular, fast, and developer-friendly.
 
+### 📸 Screenshots
 
-
-### Introduction
-
-
-
-
-
-This repository contains my Neovim configuration files, based on Lua, and using `lazy.nvim` as a plugin manager. Each file in the `plugins` directory corresponds to the configuration of a plugin or set of functionalities in Neovim.
-
-
-
-
-
-## Screenshots
-
-
-
-
-
-**Note**: For initial use, the images in this README will be removed to ensure proper functionality after cloning.
-
-
-
-
+> ⚠️ **Note**: Images are removed on first use after cloning to avoid loading issues.
 
 <p align="center">
-
-
-     <img src="/img/alpha.png" alt="" width="300"/>
-
-
-     <img src="/img/vim.png" alt="" width="300"/>
-
-
-     <br>
-
-
-     <img src="/img/lualine.png" alt="" width="300"/>
-
-
+    <img src="/imgs/ncatt-latte.png" width="300"/>
+    <img src="/imgs/ncatt-mocha.png" width="300"/>
+    <br/>
+    <img src="/imgs/neo-tree-latte.png" width="300"/>
+    <img src="/imgs/neo-tree-mocha.png" width="300"/>
+    <br/>
+    <img src="/imgs/split-latte.png" width="300"/>
+    <img src="/imgs/split-mocha.png" width="300"/>
 </p>
 
+### 📁 File Structure
 
+Each file in the `plugins` directory corresponds to the configuration for a specific plugin:
 
+- `alpha.lua`: Start screen with `alpha-nvim`
+- `autopairs.lua`: Auto-close pairs with `nvim-autopairs`
+- `catppuccin.lua`: Theme configuration for `catppuccin`
+- `completions.lua`: Autocompletion with `nvim-cmp`
+- `git-stuff.lua`: Git integrations (e.g., `gitsigns.nvim`)
+- `gitsigns.lua`: Git signs in the gutter
+- `indent-blankline.lua`: Indentation guides
+- `lsp-config.lua`: LSP setup with `nvim-lspconfig`
+- `lualine.lua`: Statusline with `lualine.nvim`
+- `neo-tree.lua`: File explorer (`neo-tree.nvim`)
+- `neodev.lua`: Enhances Lua dev experience for Neovim
+- `null-ls.lua`: Linters and formatters with `null-ls.nvim`
+- `nvim-tmux-navigation.lua`: Navigation between Neovim and tmux
+- `telescope.lua`: Fuzzy finder with `telescope.nvim`
+- `treesitter.lua`: Advanced syntax highlighting
+- `vim-splits.lua`: Split management
 
+### ⚙️ Prerequisites
 
-## File Structure
+Make sure the following are installed:
 
-
-
-
-
-- **alpha.lua**: Configuration for Neovim's start screen using the `alpha-nvim` plugin.
-
-
-- **autopairs.lua**: Configuration for handling automatic closing of parentheses, braces, and other pairs using `nvim-autopairs`.
-
-
-- **catppuccin.lua**: Configuration of the `catppuccin` theme for Neovim, with support for different styles and integration settings.
-
-
-- **completions.lua**: Configuration for autocompletion, using `nvim-cmp` or similar.
-
-
-- **git-stuff.lua**: Git-related plugins, such as `gitsigns.nvim`, configured for version control.
-
-
-- **gitsigns.lua**: Specific configuration for the `gitsigns.nvim` plugin, which shows Git changes in the gutter.
-
-
-- **indent-blankline.lua**: Configuration for `indent-blankline.nvim`, adding indentation guides.
-
-
-- **lsp-config.lua**: Configuration of Language Server Protocols (LSP) using `nvim-lspconfig`.
-
-
-- **lualine.lua**: Statusline configuration using `lualine.nvim`.
-
-
-- **neo-tree.lua**: File explorer using `neo-tree.nvim`.
-
-
-- **neodev.lua**: Configuration for `neodev.nvim` to aid Neovim plugin development.
-
-
-- **null-ls.lua**: Configuration for `null-ls.nvim` for linters, formatters, and more.
-
-
-- **nvim-tmux-navigation.lua**: Navigation integration between Neovim and tmux.
-
-
-- **telescope.lua**: Powerful finder using `telescope.nvim`.
-
-
-- **treesitter.lua**: Syntax highlighting with `nvim-treesitter`.
-
-
-- **vim-splits.lua**: Split management in Neovim.
-
-
-
-
-
-### Prerequisites
-
-
-
-
-
-Ensure you have the following tools installed on your system:
-
-
-
-
-
-- [Neovim](https://neovim.io/) v0.8 or higher
-
-
+- [Neovim](https://neovim.io/) `v0.8+`
 - [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/)
 
+### 🚀 Installation
 
-- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) (for some LSP and Treesitter plugins)
-
-
-
-
-
-### Installation
-
-
-
-
-
-1. Clone this repository to your Neovim configuration directory:
-
-
-
-
-
-   ```sh
-
-
-   git clone https://github.com/SwintDev/Config-Neovim.git ~/.config/nvim
-
-
-   rm -rf ~/.config/nvim/img ~/.config/nvim/README.md
-
-
-   ```
-
-
----
-
-
-### License 
-
-
-
-
-
-File txt
-
-
-
-
-
----
-
+```bash
+git clone https://github.com/swenhtdev/Ncatt.git ~/.config/nvim
+rm -rf ~/.config/nvim/img ~/.config/nvim/README.md
 
 
 
 
 <div align="center">
 
-
-   <img src="/img/Ncatt.svg" alt="Ncatt Logo" style="border-radius: 50%; height: 450px; width: 450px;"/>
-
+  <img src="/img/Ncatt.svg" alt="Logo de Ncatt" style="border-radius: 50%; height: 300px; width: 300px;"/>
 
 </div>
 
+# 🧠 Proyecto Ncatt
 
+> Configuración de Neovim en Lua usando `lazy.nvim`.
 
-
-
-# Proyecto Ncatt
-
-
-
-
-
-## Configuración de Neovim
-
-
-
-
-
-## Español
-
-
-
-
-
-### Introducción
-
-
-
-
-
-Este repositorio contiene la configuración de Neovim basada en Lua, utilizando `lazy.nvim` como gestor de plugins. Cada archivo en el directorio `plugins` corresponde a la configuración de un plugin o de un conjunto de funcionalidades en Neovim.
-
-
-
-
-
-## Algunas Imágenes
-
-
-
-
-
-**Nota**: Para el uso inicial, las imágenes en este README se eliminarán para asegurar que la configuración funcione correctamente después de clonar.
-
-
-
-
-
-<p align="center">
-
-
-     <img src="/img/alpha.png" alt="" width="300"/>
-
-
-     <img src="/img/vim.png" alt="" width="300"/>
-
-
-     <br>
-
-
-     <img src="/img/lualine.png" alt="" width="300"/>
-
-
-</p>
-
-
-
-
-
-## Estructura de Archivos
-
-
-
-
-
-- **alpha.lua**: Configuración para la pantalla de inicio de Neovim usando `alpha-nvim`.
-
-
-- **autopairs.lua**: Manejo de cierre automático de paréntesis y otros pares con `nvim-autopairs`.
-
-
-- **catppuccin.lua**: Configuración del tema `catppuccin` con integración de estilos.
-
-
-- **completions.lua**: Configuración de autocompletado con `nvim-cmp`.
-
-
-- **git-stuff.lua**: Plugins relacionados con Git, como `gitsigns.nvim`.
-
-
-- **gitsigns.lua**: Configuración de `gitsigns.nvim`, mostrando cambios de Git en el margen.
-
-
-- **indent-blankline.lua**: Añade guías de indentación con `indent-blankline.nvim`.
-
-
-- **lsp-config.lua**: Configuración de servidores de lenguaje con `nvim-lspconfig`.
-
-
-- **lualine.lua**: Barra de estado personalizada con `lualine.nvim`.
-
-
-- **neo-tree.lua**: Explorador de archivos con `neo-tree.nvim`.
-
-
-- **neodev.lua**: Facilita el desarrollo de plugins para Neovim con `neodev.nvim`.
-
-
-- **null-ls.lua**: Configuración de linters y formatters con `null-ls.nvim`.
-
-
-- **nvim-tmux-navigation.lua**: Navegación entre Neovim y tmux.
-
-
-- **telescope.lua**: Buscador potente con `telescope.nvim`.
-
-
-- **treesitter.lua**: Resaltado avanzado de sintaxis con `nvim-treesitter`.
-
-
-- **vim-splits.lua**: Manejo de splits en Neovim.
-
-
-
-
-
-### Requisitos Previos
-
-
-
-
-
-Asegúrate de tener las siguientes herramientas instaladas:
-
-
-
-
-
-- [Neovim](https://neovim.io/) v0.8 o superior
-
-
-- [Git](https://git-scm.com/)
-
-
-- [Node.js](https://nodejs.org/) y [npm](https://www.npmjs.com/) (para algunos plugins de LSP y Treesitter)
-
-
-
-
-
-### Instalación
-
-
-
-
-
-1. Clona este repositorio en tu directorio de configuración de Neovim:
-
-
-
-
-
-   ```sh
-
-
-   git clone https://github.com/SwintDev/Ncatt.git ~/.config/nvim
-
-
-   rm -rf ~/.config/nvim/img ~/.config/nvim/README.md
-
-
-   ```
-
+[**Versión en Inglés**](#english) | [**Español**](#espa%C3%B1ol)
 
 ---
 
+## 📘 Introducción
 
-### Licencia
+Bienvenido a **Ncatt**, una configuración de Neovim modular, optimizada y pensada para desarrolladores. Está escrita en **Lua** y utiliza **[lazy.nvim](https://github.com/folke/lazy.nvim)** como gestor de plugins.
 
+Este entorno te proporcionará una experiencia fluida con soporte para LSP, autocompletado, integración con Git, resaltado avanzado de sintaxis y más.
 
+---
 
+## 📸 Algunas Imágenes
 
+> ⚠️ **Nota**: Las imágenes serán eliminadas automáticamente al clonar el repositorio, para evitar errores en la carga inicial.
 
-Archivo txt
+<p align="center">
+    <img src="/imgs/ncatt-latte.png" width="300"/>
+    <img src="/imgs/ncatt-mocha.png" width="300"/>
+    <br/>
+    <img src="/imgs/neo-tree-latte.png" width="300"/>
+    <img src="/imgs/neo-tree-mocha.png" width="300"/>
+    <br/>
+    <img src="/imgs/split-latte.png" width="300"/>
+    <img src="/imgs/split-mocha.png" width="300"/>
+</p>
+
+---
+
+## 📁 Estructura de Archivos
+
+Cada archivo en el directorio `plugins` contiene la configuración específica de un plugin o funcionalidad:
+
+- `alpha.lua`: Pantalla de inicio con `alpha-nvim`
+- `autopairs.lua`: Cierre automático de paréntesis y llaves con `nvim-autopairs`
+- `catppuccin.lua`: Tema visual `catppuccin`
+- `completions.lua`: Autocompletado con `nvim-cmp`
+- `git-stuff.lua`: Plugins relacionados con Git como `gitsigns.nvim`
+- `gitsigns.lua`: Indicadores de cambios en el margen del código
+- `indent-blankline.lua`: Guías visuales de indentación
+- `lsp-config.lua`: Configuración de servidores de lenguaje (LSP)
+- `lualine.lua`: Barra de estado con `lualine.nvim`
+- `neo-tree.lua`: Explorador de archivos (`neo-tree.nvim`)
+- `neodev.lua`: Mejora la experiencia al desarrollar plugins en Lua
+- `null-ls.lua`: Integración de linters y formatters con `null-ls.nvim`
+- `nvim-tmux-navigation.lua`: Navegación fluida entre Neovim y tmux
+- `telescope.lua`: Buscador de archivos y símbolos con `telescope.nvim`
+- `treesitter.lua`: Resaltado avanzado de sintaxis con `nvim-treesitter`
+- `vim-splits.lua`: Gestión eficiente de splits en Neovim
+
+---
+
+## ⚙️ Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
+
+- [Neovim](https://neovim.io/) `v0.8` o superior
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) y [npm](https://www.npmjs.com/) (necesario para algunos LSP y Treesitter)
+
+---
+
+## 🚀 Instalación
+
+Clona este repositorio directamente en tu configuración de Neovim:
+
+```bash
+git clone https://github.com/swenhtdev/Ncatt.git ~/.config/nvim
+rm -rf ~/.config/nvim/img ~/.config/nvim/README.md
+
