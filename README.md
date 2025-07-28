@@ -2,7 +2,7 @@
 
 > Neovim configuration in Lua using `lazy.nvim`.
 
-[**English**](#english) | [**Español**](#espa%C3%B1ol)
+[**English**](#english) | [**Español**](#Español)
 
 ---
 
@@ -80,7 +80,7 @@ This project is licensed under the **Ncatt Personal Use License v1.0**.
 
 > Configuración de Neovim en Lua usando `lazy.nvim`.
 
-[**Versión en Inglés**](#english) | [**Español**](#espa%C3%B1ol)
+[**Versión en Inglés**](#english) | [**Español**](#Español)
 
 ---
 
