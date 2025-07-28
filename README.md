@@ -74,7 +74,9 @@ This project is licensed under the **Ncatt Personal Use License v1.0**.
 
 ⚠️ Note: Some files configure third-party plugins that are licensed separately (e.g., MIT, Apache 2.0). This license applies only to this configuration and documentation.
 
+---
 
+## Español
 
 # 🧠 Proyecto Ncatt
 
