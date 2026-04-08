@@ -67,7 +67,7 @@ See `LICENSE.txt` for details.
 
 ---
 
-## Espanol
+## Español
 
 ### ✨ Resumen
 
