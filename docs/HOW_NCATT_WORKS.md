@@ -1,6 +1,6 @@
 # How Ncatt Works
 
-[English](#english) | [Español](#espanol)
+[English](#english) | [Español](#español)
 
 ## English
 
@@ -109,7 +109,7 @@ Ncatt works like this:
 - Catppuccin gives the main visual identity
 - LSP, completion, Treesitter, Telescope, and Neo-tree form the main editing workflow
 
-## Espanol
+## Español
 
 ### Qué es Ncatt
 
