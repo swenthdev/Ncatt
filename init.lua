@@ -20,11 +20,4 @@ vim.opt.cursorline = true
 
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#CBA6F7", bg = "NONE", bold = true })
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-	callback = function()
-		vim.cmd('echom "File saved successfully!"')
-	end,
-})
-
 vim.tbl_islist = vim.islist
-

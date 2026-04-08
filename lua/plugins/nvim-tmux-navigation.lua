@@ -6,14 +6,15 @@ return {
   config = function()
     -- EN: Load the nvim-tmux-navigation plugin with default settings.
     -- ES: Carga el plugin nvim-tmux-navigation con la configuración predeterminada.
-    require('nvim-tmux-navigation').setup({})
+    require('nvim-tmux-navigation').setup({
+      disable_when_zoomed = true,
+    })
 
     -- EN: Map Ctrl + h/j/k/l to move between tmux and Neovim splits.
     -- ES: Asigna Ctrl + h/j/k/l para moverse entre divisiones de tmux y Neovim.
-    vim.keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", {})
-    vim.keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", {})
-    vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", {})
-    vim.keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", {})
+    vim.keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true, desc = "Tmux left" })
+    vim.keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true, desc = "Tmux down" })
+    vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true, desc = "Tmux up" })
+    vim.keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true, desc = "Tmux right" })
   end,
 }
-
