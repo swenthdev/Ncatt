@@ -75,7 +75,6 @@ return {
         vim.lsp.config(server, {
           capabilities = capabilities,
         })
-        vim.lsp.enable(server)
       end
 
       -- EN: Custom configuration for Lua LSP to recognize Neovim globals.
@@ -98,33 +97,21 @@ return {
       -- EN: Configure diagnostics display (virtual text, signs, underline, etc.).
       -- ES: Configura la visualización de diagnósticos (texto virtual, signos, subrayado, etc.).
       vim.diagnostic.config({
-        virtual_text = {
-          spacing = 2,
-          source = "if_many",
-        },
+        virtual_text = true,
         signs = true,
-        update_in_insert = false,
+        update_in_insert = true,
         underline = true,
         severity_sort = true,
-        float = {
-          border = "rounded",
-          source = true,
-        },
+        float = { border = "rounded" },
       })
 
-      -- EN: Buffer-local keybindings are created only when an LSP attaches.
-      -- ES: Los atajos locales al buffer se crean solo cuando un LSP se adjunta.
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(event)
-          local opts = { buffer = event.buf, silent = true }
-
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
-          vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
-          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-          vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-        end,
-      })
+      -- EN: Keybindings for common LSP actions.
+      -- ES: Atajos de teclado para acciones comunes del LSP.
+      vim.keymap.set("n", "K", vim.lsp.buf.hover)
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 
       -- EN: Adds rounded borders to floating LSP windows.
       -- ES: Añade bordes redondeados a las ventanas flotantes del LSP.
@@ -135,3 +122,4 @@ return {
     end,
   },
 }
+

@@ -1,13 +1,12 @@
 return {
-  -- EN: LazyDev is the current replacement for neodev.nvim and improves LuaLS for Neovim configs.
-  -- ES: LazyDev es el reemplazo actual de neodev.nvim y mejora LuaLS para configuraciones de Neovim.
-  "folke/lazydev.nvim",
-  ft = "lua",
-  opts = {
-    library = {
-      -- EN: Load luv types when vim.uv is used.
-      -- ES: Carga los tipos de luv cuando se usa vim.uv.
-      { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-    },
-  },
+  -- EN: Neodev enhances the Lua development experience in Neovim, especially for writing Neovim config and plugins.
+  -- ES: Neodev mejora la experiencia de desarrollo en Lua dentro de Neovim, especialmente al escribir configuraciones y plugins para Neovim.
+  "folke/neodev.nvim",
+
+  config = function()
+    -- EN: Initializes Neodev with default settings. This provides better autocompletion, type checking, and documentation for Neovim’s Lua API.
+    -- ES: Inicializa Neodev con la configuración por defecto. Esto proporciona mejor autocompletado, verificación de tipos y documentación para la API Lua de Neovim.
+    require("neodev").setup({})
+  end,
 }
+

@@ -7,7 +7,6 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-buffer",
-      "folke/lazydev.nvim",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "roobert/tailwindcss-colorizer-cmp.nvim",
@@ -90,7 +89,6 @@ return {
         -- EN: Define completion sources such as LSP, LuaSnip, and buffer.
         -- ES: Define las fuentes de autocompletado como LSP, LuaSnip y buffer.
         sources = cmp.config.sources({
-          { name = "lazydev", group_index = 0 },
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "nvim_lua" },
@@ -109,7 +107,6 @@ return {
               ellipsis_char = "...",
               menu = {
                 buffer = "[Buffer]",
-                lazydev = "[LazyDev]",
                 nvim_lsp = "[LSP]",
                 nvim_lua = "[Lua]",
                 luasnip = "[Snip]",
@@ -158,3 +155,4 @@ return {
     end,
   },
 }
+

@@ -11,8 +11,22 @@ return {
     -- EN: Key mappings to open Neo-tree in different modes.
     -- ES: Atajos de teclado para abrir Neo-tree en distintos modos.
     keys = {
-      { "<C-n>",      ":Neotree filesystem reveal right<CR>", noremap = true, silent = true },
-      { "<leader>bf", ":Neotree buffers reveal float<CR>",    noremap = true, silent = true },
+      {
+        "<C-n>",
+        function()
+          require("neo-tree.command").execute({
+            action   = "focus",
+            source   = "filesystem",
+            position = "right",
+            dir      = "/",
+            reveal   = true,  -- ubica el archivo activo dentro del árbol si existe
+          })
+        end,
+        noremap = true,
+        silent  = true,
+        desc    = "Neo-tree desde /",
+      },
+      { "<leader>bf", ":Neotree buffers reveal float<CR>", noremap = true, silent = true },
     },
 
     -- EN: Commands that can trigger the lazy-loading of this plugin.
@@ -161,10 +175,13 @@ return {
             hide_gitignored = false,
             hide_hidden = true,
           },
-          follow_current_file = { enabled = true },
+          -- Abre el árbol en la ubicación del archivo activo al revelar
+          follow_current_file = { enabled = true, leave_dirs_open = true },
+          -- Permite navegar hasta / usando <bs> repetidamente
+          navigate_from_cwd = false,  -- false = navega desde la raíz del árbol, no del cwd
           group_empty_dirs = false,
           hijack_netrw_behavior = "open_default",
-          use_libuv_file_watcher = false,
+          use_libuv_file_watcher = true,  -- detecta cambios en disco en tiempo real
           window = {
             mappings = {
               ["<bs>"] = "navigate_up",
@@ -177,6 +194,14 @@ return {
               ["<c-x>"] = "clear_filter",
               ["[g"] = "prev_git_modified",
               ["]g"] = "next_git_modified",
+              -- Ir directo a la raíz del sistema
+              ["gr"] = function(state)
+                require("neo-tree.command").execute({
+                  action = "focus",
+                  source = "filesystem",
+                  dir = "/",
+                })
+              end,
               ["o"] = { "show_help", nowait = false, config = { title = "Order by", prefix_key = "o" } },
               ["oc"] = { "order_by_created", nowait = false },
               ["od"] = { "order_by_diagnostics", nowait = false },

@@ -58,12 +58,43 @@ return {
 
       -- EN: Keymaps for quick access to Telescope pickers.
       -- ES: Atajos de teclado para acceder rápidamente a los buscadores de Telescope.
-      vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+      -- Búsqueda normal (desde el directorio del proyecto)
+      vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files (cwd)" })
+      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep (cwd)" })
       vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, { desc = "Recent files" })
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help" })
       vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Search word under cursor" })
+
+      -- Búsqueda desde la raíz del sistema de archivos (/)
+      vim.keymap.set("n", "<leader>fr", function()
+        builtin.find_files({
+          prompt_title = "  Find Files (root /)",
+          cwd = "/",
+          hidden = true,
+          no_ignore = true,
+          file_ignore_patterns = { "^proc/", "^sys/", "^dev/", "^run/", "%.sock$" },
+        })
+      end, { desc = "Find files from /" })
+
+      vim.keymap.set("n", "<leader>fR", function()
+        builtin.live_grep({
+          prompt_title = "  Grep (root /)",
+          cwd = "/",
+          additional_args = { "--no-ignore", "--hidden" },
+        })
+      end, { desc = "Live grep from /" })
+
+      -- Búsqueda desde la carpeta del archivo actual
+      vim.keymap.set("n", "<leader>fc", function()
+        local file_dir = vim.fn.expand("%:p:h")
+        if file_dir == "" then file_dir = vim.fn.getcwd() end
+        builtin.find_files({
+          prompt_title = "  Files near current file",
+          cwd = file_dir,
+          hidden = true,
+        })
+      end, { desc = "Find files from current file dir" })
     end,
   },
 }

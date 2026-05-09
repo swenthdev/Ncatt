@@ -3,11 +3,6 @@ return {
   version = "*",
   dependencies = 'nvim-tree/nvim-web-devicons',
   config = function()
-    local function current_palette()
-      local flavour = vim.o.background == "light" and "latte" or "mocha"
-      return require("catppuccin.palettes").get_palette(flavour)
-    end
-
     -- EN: Load and configure the Bufferline plugin to display buffers (tabs) in a bar at the top.
     -- ES: Carga y configura el plugin Bufferline para mostrar los buffers (pestañas) en una barra superior.
     require("bufferline").setup {
@@ -86,23 +81,17 @@ return {
       },
     }
 
-    -- EN: Refresh bufferline highlight colors according to the active Catppuccin flavour.
-    -- ES: Actualiza los colores de bufferline según el sabor activo de Catppuccin.
-    local function apply_highlights()
-      local palette = current_palette()
-      vim.api.nvim_set_hl(0, "BufferLineFill", { bg = palette.base })
-      vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { fg = palette.mauve })
-      vim.api.nvim_set_hl(0, "BufferLineModified", { fg = palette.text })
-      vim.api.nvim_set_hl(0, "BufferLineModifiedVisible", { fg = palette.text })
-      vim.api.nvim_set_hl(0, "BufferLineModifiedSelected", { fg = palette.text })
-    end
+    -- EN: Import Catppuccin palette for custom bufferline highlights.
+    -- ES: Importa la paleta de Catppuccin para los resaltados personalizados de bufferline.
+    local palette = require("catppuccin.palettes").get_palette("mocha")
 
-    apply_highlights()
-
-    vim.api.nvim_create_autocmd("ColorScheme", {
-      pattern = "catppuccin",
-      callback = apply_highlights,
-    })
+    -- EN: Customize highlight colors for various bufferline elements.
+    -- ES: Personaliza los colores de resaltado para varios elementos del bufferline.
+    vim.cmd("highlight BufferLineFill guibg=#1E1E2E")
+    vim.cmd("highlight BufferLineIndicatorSelected guifg=" .. palette.mauve)
+    vim.cmd("highlight BufferLineModified guifg=" .. palette.text)
+    vim.cmd("highlight BufferLineModifiedVisible guifg=" .. palette.text)
+    vim.cmd("highlight BufferLineModifiedSelected guifg=" .. palette.text)
 
     -- EN: Keymaps for cycling between buffers using <leader>bp (previous) and <leader>bn (next).
     -- ES: Atajos de teclado para moverse entre buffers usando <leader>bp (anterior) y <leader>bn (siguiente).
@@ -110,3 +99,4 @@ return {
     vim.api.nvim_set_keymap('n', '<leader>bn', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
   end
 }
+
