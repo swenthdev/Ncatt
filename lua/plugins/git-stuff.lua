@@ -1,6 +1,6 @@
 return {
   {
-    "tpope/vim-fugitive"
+    "tpope/vim-fugitive",
     -- EN: Adds Git commands inside Neovim (e.g., :Git, :Gdiffsplit, :Gpush).
     -- ES: Agrega comandos de Git dentro de Neovim (por ejemplo, :Git, :Gdiffsplit, :Gpush).
   },

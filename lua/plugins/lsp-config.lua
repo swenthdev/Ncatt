@@ -25,16 +25,45 @@ return {
       -- EN: List of LSP servers Mason should install automatically.
       -- ES: Lista de servidores LSP que Mason debe instalar automáticamente.
       ensure_installed = {
-        "ts_ls",
-        "jdtls",
-        "intelephense",
-        "rust_analyzer",
-        "jsonls",
-        "html",
-        "lua_ls",
-        "cssls",
-        "pyright",
-        "gopls",
+        -- EN: Web / scripting languages.
+        -- ES: Lenguajes web y de scripting.
+        "ts_ls",         -- TypeScript / JavaScript
+        "html",          -- HTML
+        "cssls",         -- CSS
+        "jsonls",        -- JSON
+
+        -- EN: Systems / compiled languages.
+        -- ES: Lenguajes de sistemas / compilados.
+        "jdtls",         -- Java
+        "rust_analyzer", -- Rust
+        "gopls",         -- Go
+        "clangd",        -- C / C++
+        "asm_lsp",       -- Assembly
+        "cmake-language-server", -- CMake (build system)
+
+        -- EN: Scripting / interpreted languages.
+        -- ES: Lenguajes de scripting / interpretados.
+        "pyright",       -- Python
+        "intelephense",  -- PHP
+        "bashls",        -- Bash / Shell
+
+        -- EN: Config / infrastructure languages.
+        -- ES: Lenguajes de configuración / infraestructura.
+        "yamlls",        -- YAML
+        "dockerls",      -- Dockerfile
+        "sqlls",         -- SQL
+        "taplo",         -- TOML (Cargo.toml, pyproject.toml, etc.)
+        "nginx-language-server", -- Nginx config files
+        "terraformls",   -- Terraform / HCL
+
+        -- EN: Markup / documentation formats.
+        -- ES: Formatos de marcado / documentación.
+        "marksman",      -- Markdown (links, headings, references)
+        "lemminx",       -- XML / SVG / Maven POM / Spring XML
+
+        -- EN: Editor tooling.
+        -- ES: Herramientas del editor.
+        "lua_ls",        -- Lua (Neovim config)
       },
       -- EN: Enables automatic installation of LSP servers.
       -- ES: Habilita la instalación automática de los servidores LSP.
@@ -54,19 +83,50 @@ return {
       -- ES: Agrega las capacidades de autocompletado de nvim-cmp a todos los servidores LSP.
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- EN: List of all LSP servers to configure.
-      -- ES: Lista de todos los servidores LSP que se configurarán.
+      -- EN: List of all LSP servers to configure with default capabilities.
+      --     Servers with custom settings (e.g., lua_ls) are configured separately below.
+      -- ES: Lista de todos los servidores LSP que se configurarán con las capacidades por defecto.
+      --     Los servidores con configuración personalizada (p. ej., lua_ls) se configuran por separado abajo.
       local servers = {
-        "ts_ls",
-        "jdtls",
-        "intelephense",
-        "rust_analyzer",
-        "jsonls",
-        "html",
-        "lua_ls",
-        "cssls",
-        "pyright",
-        "gopls",
+        -- EN: Web / scripting languages.
+        -- ES: Lenguajes web y de scripting.
+        "ts_ls",         -- TypeScript / JavaScript
+        "html",          -- HTML
+        "cssls",         -- CSS
+        "jsonls",        -- JSON
+
+        -- EN: Systems / compiled languages.
+        -- ES: Lenguajes de sistemas / compilados.
+        "jdtls",         -- Java
+        "rust_analyzer", -- Rust
+        "gopls",         -- Go
+        "clangd",        -- C / C++
+        "asm_lsp",       -- Assembly
+        "cmake-language-server", -- CMake (build system)
+
+        -- EN: Scripting / interpreted languages.
+        -- ES: Lenguajes de scripting / interpretados.
+        "pyright",       -- Python
+        "intelephense",  -- PHP
+        "bashls",        -- Bash / Shell
+
+        -- EN: Config / infrastructure languages.
+        -- ES: Lenguajes de configuración / infraestructura.
+        "yamlls",        -- YAML
+        "dockerls",      -- Dockerfile
+        "sqlls",         -- SQL
+        "taplo",         -- TOML (Cargo.toml, pyproject.toml, etc.)
+        "nginx-language-server", -- Nginx config files
+        "terraformls",   -- Terraform / HCL
+
+        -- EN: Markup / documentation formats.
+        -- ES: Formatos de marcado / documentación.
+        "marksman",      -- Markdown (links, headings, references)
+        "lemminx",       -- XML / SVG / Maven POM / Spring XML
+
+        -- EN: Editor tooling.
+        -- ES: Herramientas del editor.
+        "lua_ls",        -- Lua (Neovim config)
       }
 
       -- EN: New LSP configuration method (replaces deprecated require('lspconfig')).
@@ -113,12 +173,24 @@ return {
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 
-      -- EN: Adds rounded borders to floating LSP windows.
-      -- ES: Añade bordes redondeados a las ventanas flotantes del LSP.
-      vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-      vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+      -- EN: Adds rounded borders to floating LSP windows (hover and signature help).
+      --     Uses vim.lsp.config("*", ...) to apply globally to all servers,
+      --     replacing the deprecated vim.lsp.with() approach.
+      -- ES: Añade bordes redondeados a las ventanas flotantes del LSP (hover y ayuda de firma).
+      --     Usa vim.lsp.config("*", ...) para aplicarlo globalmente a todos los servidores,
+      --     reemplazando el uso obsoleto de vim.lsp.with().
+      vim.lsp.config("*", {
+        handlers = {
+          ["textDocument/hover"] = function(err, result, ctx, config)
+            config = vim.tbl_deep_extend("force", config or {}, { border = "rounded" })
+            vim.lsp.handlers.hover(err, result, ctx, config)
+          end,
+          ["textDocument/signatureHelp"] = function(err, result, ctx, config)
+            config = vim.tbl_deep_extend("force", config or {}, { border = "rounded" })
+            vim.lsp.handlers.signature_help(err, result, ctx, config)
+          end,
+        },
+      })
     end,
   },
 }
