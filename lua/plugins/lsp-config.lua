@@ -39,7 +39,6 @@ return {
         "gopls",         -- Go
         "clangd",        -- C / C++
         "asm_lsp",       -- Assembly
-        "cmake-language-server", -- CMake (build system)
 
         -- EN: Scripting / interpreted languages.
         -- ES: Lenguajes de scripting / interpretados.
@@ -53,7 +52,6 @@ return {
         "dockerls",      -- Dockerfile
         "sqlls",         -- SQL
         "taplo",         -- TOML (Cargo.toml, pyproject.toml, etc.)
-        "nginx-language-server", -- Nginx config files
         "terraformls",   -- Terraform / HCL
 
         -- EN: Markup / documentation formats.
