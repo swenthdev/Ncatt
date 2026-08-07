@@ -12,6 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+
+-- themeswitch.sh (the Hyprland dotfiles theme switcher) regenerates this file
+-- with vim.o.background / vim.g.catppuccin_flavour on every system theme change,
+-- but nothing was ever loading it -- nvim's colorscheme never followed the
+-- system theme. Must run before lazy.setup() so catppuccin's flavour = "auto"
+-- picks it up on this very startup.
+local flavor_file = vim.fn.stdpath("config") .. "/flavor.lua"
+if vim.fn.filereadable(flavor_file) == 1 then
+  dofile(flavor_file)
+end
+
 require("lazy").setup("plugins")
 
 vim.cmd([[set noshowmode]])

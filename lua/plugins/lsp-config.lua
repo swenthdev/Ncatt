@@ -63,9 +63,16 @@ return {
         -- ES: Herramientas del editor.
         "lua_ls",        -- Lua (Neovim config)
       },
-      -- EN: Enables automatic installation of LSP servers.
-      -- ES: Habilita la instalación automática de los servidores LSP.
-      automatic_installation = true,
+      -- EN: `automatic_installation` was removed from mason-lspconfig (no longer
+      --     compatible with the native vim.lsp.config() mechanism, see its
+      --     CHANGELOG); it was a silent no-op here. `ensure_installed` above
+      --     already installs these servers, and `automatic_enable` (on by
+      --     default) calls vim.lsp.enable() for them automatically.
+      -- ES: `automatic_installation` fue eliminado de mason-lspconfig (ya no es
+      --     compatible con el mecanismo nativo vim.lsp.config(), ver su
+      --     CHANGELOG); aquí no hacía nada. `ensure_installed` de arriba ya
+      --     instala estos servidores, y `automatic_enable` (activo por defecto)
+      --     llama a vim.lsp.enable() por ellos automáticamente.
     },
   },
   {
@@ -136,17 +143,19 @@ return {
       end
 
       -- EN: Custom configuration for Lua LSP to recognize Neovim globals.
-      -- ES: Configuración personalizada para Lua LSP para reconocer las variables globales de Neovim.
+      --     workspace.library used to be set manually here; lazydev.nvim
+      --     (plugins/lazydev.lua) now fixes lspconfig's workspace management
+      --     for lua_ls automatically, so that override was removed.
+      -- ES: Antes se configuraba workspace.library manualmente aquí; ahora
+      --     lazydev.nvim (plugins/lazydev.lua) corrige automáticamente la
+      --     configuración de workspace de lspconfig para lua_ls, así que esa
+      --     sobrescritura se eliminó.
       vim.lsp.config("lua_ls", {
         capabilities = capabilities,
         settings = {
           Lua = {
             runtime = { version = "LuaJIT" },
             diagnostics = { globals = { "vim" } },
-            workspace = {
-              library = vim.api.nvim_get_runtime_file("", true),
-              checkThirdParty = false,
-            },
             telemetry = { enable = false },
           },
         },

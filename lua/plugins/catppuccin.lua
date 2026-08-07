@@ -70,9 +70,14 @@ return {
         -- ES: Define resaltados personalizados (vacío por defecto).
         custom_highlights = {},
 
-        -- EN: Enable default integrations with other plugins.
-        -- ES: Habilita las integraciones por defecto con otros plugins.
-        default_integrations = true,
+        -- EN: Enable default integrations with other plugins. Renamed from
+        --     `default_integrations` upstream; the old name is now silently
+        --     ignored (harmless here since the new option also defaults to true).
+        -- ES: Habilita las integraciones por defecto con otros plugins. Renombrado
+        --     desde `default_integrations` en el plugin; el nombre viejo ahora se
+        --     ignora silenciosamente (inofensivo aquí porque la nueva opción
+        --     también es true por defecto).
+        auto_integrations = true,
 
         -- EN: Configure integrations with specific plugins.
         -- ES: Configura las integraciones con plugins específicos.

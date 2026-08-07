@@ -29,9 +29,13 @@ return {
         -- EN: Enables a global statusline for all windows.
         -- ES: Habilita una barra de estado global para todas las ventanas.
         globalstatus = true,
-        -- EN: Use Catppuccin theme colors.
-        -- ES: Usa los colores del tema Catppuccin.
-        theme = 'catppuccin',
+        -- EN: Use Catppuccin theme colors (must match the "mocha" flavor used below;
+        --     plain 'catppuccin' isn't a real lualine theme name and silently fell
+        --     back to 'auto' with a startup warning).
+        -- ES: Usa los colores del tema Catppuccin (debe coincidir con el flavor "mocha"
+        --     usado abajo; 'catppuccin' a secas no es un theme válido de lualine y
+        --     caía silenciosamente a 'auto' con una advertencia al iniciar).
+        theme = 'catppuccin-mocha',
         -- EN: Decorative separators between sections.
         -- ES: Separadores decorativos entre las secciones.
         section_separators = { left = '', right = '' },

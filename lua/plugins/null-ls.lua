@@ -20,7 +20,7 @@ return {
       -- EN: Configure none-ls with desired formatters.
       -- ES: Configura none-ls con los formateadores deseados.
       null_ls.setup({
-        debug = true, -- EN: Enable debug logs. / ES: Activa los logs de depuración.
+        debug = false, -- EN: Debug logging left on in prod; writes to a log file on every format. / ES: Quedó activo en producción; escribe a un log en cada formateo.
         sources = {
           -- EN: Lua formatter.
           -- ES: Formateador para Lua.

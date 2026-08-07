@@ -95,14 +95,18 @@ return {
       },
     })
 
-    -- EN: Configure nvim-notify (the notification system used by Noice).
-    -- ES: Configura nvim-notify (el sistema de notificaciones usado por Noice).
-    require("notify").setup({
-      stages = "fade_in_slide_out",
-      timeout = 3000,
-      max_height = function() return math.floor(vim.o.lines * 0.75) end,
-      max_width = function() return math.floor(vim.o.columns * 0.75) end,
-    })
+    -- EN: nvim-notify itself is configured once in plugins/notify.lua (that file
+    --     also sets its background colour, sizing and border, plus the LSP
+    --     message handler). A second require("notify").setup() call used to sit
+    --     here and run after that one (this plugin loads on VeryLazy, later than
+    --     notify.lua's immediate config), silently overwriting all of it back to
+    --     nvim-notify's own defaults.
+    -- ES: nvim-notify se configura una sola vez en plugins/notify.lua (ese
+    --     archivo también define su color de fondo, tamaño, borde y el manejador
+    --     de mensajes LSP). Antes había una segunda llamada a
+    --     require("notify").setup() aquí que corría después (este plugin carga
+    --     en VeryLazy, más tarde que la config inmediata de notify.lua),
+    --     sobrescribiendo todo silenciosamente con los defaults de nvim-notify.
 
     -- EN: Integrates Noice with Telescope for enhanced command and message search.
     -- ES: Integra Noice con Telescope para una búsqueda mejorada de comandos y mensajes.

@@ -18,13 +18,13 @@ return {
             action   = "focus",
             source   = "filesystem",
             position = "right",
-            dir      = "/",
+            dir      = vim.fn.getcwd(),  -- raíz del proyecto, no todo el filesystem (usa "gr" dentro del árbol para ir a "/")
             reveal   = true,  -- ubica el archivo activo dentro del árbol si existe
           })
         end,
         noremap = true,
         silent  = true,
-        desc    = "Neo-tree desde /",
+        desc    = "Neo-tree desde el proyecto",
       },
       { "<leader>bf", ":Neotree buffers reveal float<CR>", noremap = true, silent = true },
     },
